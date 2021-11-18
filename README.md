@@ -1,24 +1,41 @@
-# README
+# How to run it
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails: 6.1.4
 
-Things you may want to cover:
+Ruby: 2.7.2
 
-* Ruby version
+Postgresql: 14.0
 
-* System dependencies
+Follow the next steps to make that this app works.
 
-* Configuration
+## Running migration and installing gems
 
-* Database creation
+Create the Database
 
-* Database initialization
+```bash
+rake db:create
+```
+Run the migration files
+```bash
+rake db:migrate
+```
+Install the gems
+```bash
+bundle install
+```
+## Running server
 
-* How to run the test suite
+Run de server
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails s
+```
+Webpacks
+```bash
+./bin/webpack-dev-server
+```
+## The ToDo List works in this URL
 
-* Deployment instructions
-
-* ...
+```bash
+http://localhost:3000
+```
