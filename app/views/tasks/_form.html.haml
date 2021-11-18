@@ -1,0 +1,20 @@
+- @task.errors.full_messages.each do |message| 
+  %div
+    = message
+= form_for(@task) do |form|
+  %div
+    = form.text_field :name
+  %ul
+    = form.fields_for :to_dos do |builder|
+      %ol
+        - if builder.object.created_at
+          = "Created at: #{format_date(builder.object.created_at)}"
+        = builder.hidden_field :id
+        = builder.text_field :title
+        | Check if is completed
+        = builder.check_box :is_done
+        | Check for remove
+        = builder.check_box :_destroy
+
+  %div
+    = form.submit 
